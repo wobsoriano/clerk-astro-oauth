@@ -1,0 +1,15 @@
+<button id="oauth-btn" class="blue">Sign in with Google (Astro)</button>
+
+<script>
+import { $signInStore } from '@clerk/astro/client';
+
+const btn = document.querySelector('#oauth-btn');
+
+btn?.addEventListener('click', () => {
+  $signInStore.get()?.authenticateWithRedirect({
+    strategy: 'oauth_google',
+    redirectUrl: '/sso-callback-astro',
+    redirectUrlComplete: '/'
+  })
+})
+</script>

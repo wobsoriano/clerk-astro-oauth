@@ -1,11 +1,9 @@
 ---
 import { AuthenticateWithRedirectCallback } from '@clerk/astro/components';
 import Layout from '../layouts/Layout.astro';
-
-console.log('SSO callback hit')
 ---
 
-<Layout title="SSO Callback">
-    <div>This is the SSO callback page</div>
+<Layout title="SSO Callback Astro">
+    <h1>This is the SSO callback page for Astro</h1>
     <AuthenticateWithRedirectCallback />
 </Layout>

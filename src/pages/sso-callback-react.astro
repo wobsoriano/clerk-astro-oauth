@@ -1,0 +1,9 @@
+---
+import { AuthenticateWithRedirectCallback } from '@clerk/astro/react';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="SSO Callback React">
+    <h1>This is the SSO callback page for React</h1>
+    <AuthenticateWithRedirectCallback client:load />
+</Layout>
