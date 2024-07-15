@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@clerk/astro": {
+      "signature": "bb8680afc39d6061172fb2fd43e35f37",
+      "file": true
+    }
+  }
+}

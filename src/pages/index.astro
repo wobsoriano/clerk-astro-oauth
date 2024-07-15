@@ -1,28 +1,27 @@
 ---
-// import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/astro/components'
+import { SignedIn, SignedOut, UserButton } from '@clerk/astro/components'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Index">
-    <!-- <SignedOut>
-        <SignInButton />
+    <SignedOut>
+        <button id="oauth-btn">Sign in with GitHub</button>
     </SignedOut>
     <SignedIn>
         <UserButton />
-    </SignedIn> -->
-    <div>hello world</div>
+    </SignedIn>
 </Layout>
 
 <script>
-// import { $signInStore } from '@clerk/astro/client';
+import { $signInStore } from '@clerk/astro/client';
 
-// const btn = document.querySelector('#oauth-btn');
+const btn = document.querySelector('#oauth-btn');
 
-// btn?.addEventListener('click', () => {
-//   $signInStore.get()?.authenticateWithRedirect({
-//     strategy: 'oauth_google',
-//     redirectUrl: '/sso-callback',
-//     redirectUrlComplete: '/'
-//   })
-// })
+btn?.addEventListener('click', () => {
+  $signInStore.get()?.authenticateWithRedirect({
+    strategy: 'oauth_google',
+    redirectUrl: '/sso-callback',
+    redirectUrlComplete: '/'
+  })
+})
 </script>

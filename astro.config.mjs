@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
-import node from "@astrojs/node";
+// import node from "@astrojs/node";
+import vercelServerless from '@astrojs/vercel/serverless';
 import clerk from "@clerk/astro";
 import react from "@astrojs/react";
 
@@ -7,7 +8,8 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [clerk(), react()],
   output: "server",
-  adapter: node({
-    mode: "standalone"
-  })
+  // adapter: node({
+  //   mode: "standalone"
+  // }),
+  adapter: vercelServerless(),
 });
